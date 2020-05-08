@@ -2104,5 +2104,8 @@ ol.breadcrumb{
   background-color: none !important;
 }
 
-
+.fab, .far {
+    font-weight: 400;
+    font-size: 1.8em;
+}
 /*# sourceMappingURL=maps/style.css.map */
