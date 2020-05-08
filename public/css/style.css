@@ -681,16 +681,6 @@ a:focus, a:hover {
   color: #fff;
 }
 
-
-.covid-19 {
-  padding: 100px 0;
-  background: url("../images/call-to-action/call-to-action-bg-3.jpg");
-  background-size: cover;
-  margin-top: 3%;
-  color: #fff;
-}
-
-
 .call-to-action h2 {
   line-height: 1.5;
 }
@@ -710,6 +700,14 @@ a:focus, a:hover {
   padding: 100px 0;
   background-image: url("../images/call-to-action/call-to-action-bg.jpg");
   background-size: cover;
+  color: #fff;
+}
+
+.covid-19 {
+  padding: 100px 0;
+  background: url("../images/call-to-action/call-to-action-bg-3.jpg");
+  background-size: cover;
+  margin-top: 3%;
   color: #fff;
 }
 
@@ -1645,7 +1643,7 @@ a:focus, a:hover {
 }
 
 /*============================================================
-  For Small Desktop
+	For Small Desktop
 ==============================================================*/
 @media (min-width: 700px) and (max-width: 1090px) {
   .navigation .navbar-toggle {
@@ -1725,7 +1723,7 @@ a:focus, a:hover {
 }
 
 /*============================================================
-  Tablet (Portrait) Design for a width of 768px
+	Tablet (Portrait) Design for a width of 768px
 ==============================================================*/
 @media (min-width: 768px) and (max-width: 979px) {
   .counters-item:before {
@@ -1800,7 +1798,7 @@ a:focus, a:hover {
 }
 
 /*============================================================
-  Mobile (Portrait) Design for a width of 320px
+	Mobile (Portrait) Design for a width of 320px
 ==============================================================*/
 @media only screen and (max-width: 767px) {
   .navigation.sticky-header .navbar-toggle {
@@ -2003,7 +2001,7 @@ a:focus, a:hover {
 }
 
 /*============================================================
-  Mobile (Landscape) Design for a width of 480px
+	Mobile (Landscape) Design for a width of 480px
 ==============================================================*/
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .title h2 {
@@ -2098,5 +2096,13 @@ a:focus, a:hover {
     padding: 10px 15px;
   }
 }
+
+
+/* App redifined rules*/
+
+ol.breadcrumb{
+  background-color: none !important;
+}
+
 
 /*# sourceMappingURL=maps/style.css.map */

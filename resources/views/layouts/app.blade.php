@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> <!--<![endif]-->
+<!DOCTYPE html> 
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="description" content="Bingo One page parallax responsive HTML Template ">
-  
-  <meta name="author" content="Themefisher.com">
-
-<title>@yield('title') | {{ config('app.name' ,'NINS') }}</title>
+  <title>@yield('title') | {{ config('app.name' ,'Monerdaktar') }}</title>
 
 <!-- Mobile Specific Meta
   ================================================== -->
@@ -42,11 +35,11 @@
   <link rel="stylesheet" href="{{ asset('plugins/slick/slick.css') }}">
   <!-- Main Stylesheet -->
 <!--   <link rel="stylesheet" href="css/style.css">  --> 
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+  
 </head>
 
-<body id="body">
+<body id="body" class="no-box-sizing">
 
  <!--
   Start Preloader
@@ -75,7 +68,7 @@ Fixed Navigation
 <!--
 End Fixed Navigation
 ==================================== -->
-
+@yield('call2action')
 
 
 @yield('slider')
