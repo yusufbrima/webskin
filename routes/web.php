@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,22 +12,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('pages.index');
-});
+});*/
 
-Route::get('/about', function () {
-    return view('pages.about');
-});
+Route::get('/about','ServicesController@displaydoctors');
 
 Route::get('/contact', function () {
     return view('pages.contact');
 });
 
-Route::get('/services', function () {
-    return view('pages.services');
-});
+Route::get('/services','ServicesController@displayservices');
 
 Route::get('/test', function () {
     return view('pages.test');
 });
+
+Route::resource('/doctors','DoctorsController');
+
+#Route::get('/','ServicesController@index');
+Route::resource('/','ServicesController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

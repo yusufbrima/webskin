@@ -52,6 +52,6 @@
   </div>
   <div class="footer-bottom">
     <h5>Copyright <?php echo date('Y'); ?>. All rights reserved.</h5>
-    <h6>Design and Developed by <a href="http://www.yusufbrima.github.io" target="_blank">Yusuf Brima</a></h6>
+    <h6>Design and Developed by <a href="#" target="_blank"></a></h6>
   </div>
 </footer> <!-- end footer -->

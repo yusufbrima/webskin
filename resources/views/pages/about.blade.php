@@ -86,22 +86,23 @@
 					<div class="border"></div>
 				</div>
 				<!-- /section title -->
-				
+		  @if(count($doctors) >0 )
+          	@foreach($doctors as $doctor)		
 				<!-- team member -->
 				<div class="col-md-4 col-sm-6 " >
 	               <div class="team-member text-center">
 						<div class="member-photo">
 							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/1587800064.jpg')}}" alt="Meghna">
+							<img class="img-responsive" src="{{ asset($doctor->profileuri) }}" alt="Meghna">
 							<!-- /member photo -->
 							
 							<!-- member social profile -->
 							<div class="mask">
 								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>					
+									<li><a href="{{ $doctor->facebook }}"><i class="tf-ion-social-facebook"></i></a></li>
+									<li><a href="{{ $doctor->twitter }}"><i class="tf-ion-social-twitter"></i></a></li>
+									<li><a href="{{ $doctor->googleplus }}"><i class="tf-ion-social-google-outline"></i></a></li>
+									<li><a href="{{ $doctor->linkedin}}"><i class="tf-ion-social-dribbble"></i></a></li>					
 								</ul>
 							</div>
 							<!-- /member social profile -->
@@ -109,176 +110,18 @@
 						
 						<!-- member name & designation -->
 						<div class="member-content">
-							<h3>Sharmin Ara</h3>
-							<span>MS & M.Phil (part-2) in Clinical Psychology <br />Telepsychiatry Research and Innovation Network</span>
-							<p>She works as a psychologist, researcher, trainer, and clinical supervisor in mental health fields. She is a Cognitive-Behavioral Therapy (CBT) and Systemic Family Therapy (SFT) practitioner. She deals with children, adolescents, and adults with a wide range of emotional, behavioral problems like depression, substance abuse, relationship difficulties, family issues, etc.</p>
+							<h3>{{ $doctor->title .' '.$doctor->firstname . ' ' . $doctor->middlename . ' ' . $doctor->lastname }}</h3>
+							<span>{{ $doctor->qualification }}</span>
+							<p>{{ $doctor->bio }}</p>
+							<a class="btn btn-main" href="/doctors/{{ $doctor->id }}">View Profile</a>
 						</div>
 						<!-- /member name & designation -->
 					   
 	               </div>
 	            </div>
 				<!-- end team member -->
-				
-				<!-- team member -->
-				<div class="col-md-4 col-sm-6 " >
-	               <div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/15877972181681502808.jpg')}}" alt="Meghna">
-							<!-- /member photo -->
-							
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-						
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Md. Ashiquir Rahaman</h3>
-							<span>Ms & M.Phil in Clinical Psychology <br />Telepsychiatry Research and Innovation Network Ltd</span>
-							<p>Mr Ashique is an enthusiastic researcher-practitioner in the field of clinical psychology. In his clinical practice, he delivers cognitive behavioral therapy (CBT) and other evidence-based treatments to adult and adolescent clients with a wide range of emotional, behavioral, adjustment, and chronic health related problems such as anxiety, stress, depression, trauma, chronic pain, drug addiction, and relationship problems.</p>
-						</div>
-						<!-- /member name & designation -->
-					</div>
-	            </div>
-				<!-- end team member -->
-				
-				<!-- team member -->
-				<div class="col-md-4 col-sm-6 ">
-	               <div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/1587808824.jpg')}}" alt="Meghna">
-							<!-- /member photo -->
-							
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>					
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-						
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Md. Aminul Islam</h3>
-							<span>MSc & MPhil in Clinical Psychology <br />Telepsychiatry Research and Innovation Network Ltd</span>
-							<p>Md. Aminul working in the mental health sector for a long period of time. Primarily, a mental health professional, he loves to work with adolescents and adults. Aminul has been working with different disorders, and he delivers cognitive behavioral therapy (CBT), Dialectical behavior therapy (DBT) and other evidence-based treatments to adult and adolescent with a wide range of emotional, behavioral, and adjustment issues.</p>
-						</div>
-						<!-- /member name & designation -->
-						
-	               </div>
-	            </div>
-				<!-- end team member -->
-			</div>  	<!-- End row -->
-
-			<div class="row">
-				
-				<!-- team member -->
-				<div class="col-md-4 col-sm-6 " >
-	               <div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/15878033771711244749.jpg')}}" alt="Meghna">
-							<!-- /member photo -->
-							
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>					
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-						
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Prof. Dr. Faruq Alam</h3>
-							<span>MBBS, FCPS <br />National Institute of Mental Health</span>
-							<p>Prof Dr. Alam is one of the most famous and leading child and adolescent Psychiatrist in Bangladesh with experience of about 30 years i the field. He worked as Director Cum Professor of Child and Adolescent Psychiatry in National Institute of Bangladesh and conducted several pioneering research in the filed.</p>
-						</div>
-						<!-- /member name & designation -->
-					   
-	               </div>
-	            </div>
-				<!-- end team member -->
-				
-				<!-- team member -->
-				<div class="col-md-4 col-sm-6 " >
-	               <div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/default.png')}}" alt="Meghna">
-							<!-- /member photo -->
-							
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-						
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Dr. Hosnea Ara</h3>
-							<span>MBBS, MD (Psychiatry)</span>
-							<p>As an Assistant Professor of Psychiatry I'm registered member of BMDC bearing # A54507, General Member of Bangladesh Association of Psychiatrist & Bangladesh Association for Child & Adolescent Mental Health. I've got Honorable Presidential & Prime Minister's Gold Medal in MD (Psychiatry) from BSMMU. I would like to promote women's & child mental health with psychotherapy treatment.</p>
-						</div>
-						<!-- /member name & designation -->
-					</div>
-	            </div>
-				<!-- end team member -->
-				
-				<!-- team member -->
-				<div class="col-md-4 col-sm-6 ">
-	               <div class="team-member text-center">
-						<div class="member-photo">
-							<!-- member photo -->
-							<img class="img-responsive" src="{{ asset('images/team/15878083601718827138.jpg')}}" alt="Meghna">
-							<!-- /member photo -->
-							
-							<!-- member social profile -->
-							<div class="mask">
-								<ul class="clearfix">
-									<li><a href="#"><i class="tf-ion-social-facebook"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-twitter"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-google-outline"></i></a></li>
-									<li><a href="#"><i class="tf-ion-social-dribbble"></i></a></li>					
-								</ul>
-							</div>
-							<!-- /member social profile -->
-						</div>
-						
-						<!-- member name & designation -->
-						<div class="member-content">
-							<h3>Tanjir Rashid Soron</h3>
-							<span>MD in Psychiatry <br />Telepsychiatry Research and Innovation Network</span>
-							<p>Md. Aminul working in the mental health sector for a long period of time. Primarily, a mental health professional, he loves to work with adolescents and adults. Aminul has been working with different disorders, and he delivers cognitive behavioral therapy (CBT), Dialectical behavior therapy (DBT) and other evidence-based treatments to adult and adolescent with a wide range of emotional, behavioral, and adjustment issues.</p>
-						</div>
-						<!-- /member name & designation -->
-						
-	               </div>
-	            </div>
-				<!-- end team member -->
+				@endforeach
+			  @endif
 			</div>  	<!-- End row -->
 		</div>   	<!-- End container -->
 	</section>   <!-- End section -->

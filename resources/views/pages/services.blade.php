@@ -38,78 +38,36 @@
 				<div class="border"></div>
 			</div>
 			<!-- /section title -->
-			
-            <!-- Single Service Item -->
-			<div class="col-md-4 col-sm-6 col-xs-12  no-padding" >
-				<div class="service-block color-bg text-center">
-					<div class="service-icon text-center">
-						<i class="fas fa-hospital-user"></i>
+			@if(count($services))
+				@foreach($services as $service)
+					@if($service->id % 2 == 0)
+						<!-- Single Service Item -->
+						<div class="col-md-4 col-sm-6 col-xs-12  no-padding" >
+							<div class="service-block  text-center">
+							<div class="service-icon text-center">
+								<i class="fas fa-hospital-user"></i>
+							</div>
+							<h3>{{ $service->title }}</h3>
+							<p> {{ $service->description }}</p>
+						</div>
 					</div>
-					<h3>PSYCHIATRIC CONSULTATION</h3>
-					<p>For patients suffering from mental problems, seeking a psychiatric consultation is the first step towards receiving the treatment they need. Psychiatric consultation are available from the most famous and respected psychiatrists having MD or FCPS and other advanced degrees. A comprehensive psychiatric consultation may require multiple sessions. After the complete mental state examination the experts make your diagnosis and provide appropriate treatment either medication or psychotherapy or both</p>
-				</div>
-			</div>
-            <!-- End Single Service Item -->
+		            <!-- End Single Service Item -->
+		            @else
+						<!-- Single Service Item -->
+						<div class="col-md-4 col-sm-6 col-xs-12  no-padding" >
+							<div class="service-block color-bg text-center">
+							<div class="service-icon text-center">
+								<i class="fas fa-hospital-user"></i>
+							</div>
+							<h3>{{ $service->title }}</h3>
+							<p> {{ $service->description }}</p>
+						</div>
+					</div>
+		            <!-- End Single Service Item -->	
+					@endif
+				@endforeach
+			@endif
             
-            <!-- Single Service Item -->
-			<div class="col-md-4 col-sm-6 col-xs-12  no-padding" >
-				<div class="service-block text-center">
-					<div class="service-icon text-center">
-						<i class="fas fa-user-md"></i>
-					</div>
-					<h3>Psychotherapy and Counselling</h3>
-					<p>The best and brightest Clinical Psychologists and Councilors are providing evidence- based quality sessions for our clients. Psychotherapy and Counselling help eliminate or control troubling symptoms due to the impact of stress, trauma, medical illness or loss and different mental disorders, so that a person can function better and can increase well-being. Qualified psychologist do counseling and psychotherapy, perform psychological testing, and provide treatment for different mental disorders. The different types of CBT, DBT, Group therapy, Couple Counselling, Family Therapy, Mindfulness and other psychological technique are used for resolving issues.</p>
-				</div>
-			</div>
-            <!-- End Single Service Item -->
-            
-            <!-- Single Service Item -->
-			<div class="col-md-4 col-sm-6 col-xs-12  no-padding"  >
-				<div class="service-block color-bg text-center">
-					<div class="service-icon text-center">
-						<i class="fas fa-laptop-medical"></i>
-					</div>
-					<h3>Self Assesment</h3>
-					<p>Self-assessment help assess your behavior, personality and capabilities. Self- assessment includes psychological assessment and testing that uses a combination of techniques to help arrive at some hypotheses about a person. They are designed to help you thorough clinical interview, tests such as questionnaires or checklists or performing a psychological battery and other assessment tools to measure and observe issues. After the assessment a systematic articulated report is provide to the person. IQ test, aptitude testing, memory test, personality test and neuropsychogical test are available to assess a wide range of issues in interest.</p>
-				</div>
-			</div>
-			<!-- End Single Service Item -->
-			
-			<!-- Single Service Item -->
-			<div class="col-md-4 col-sm-6 col-xs-12  no-padding" >
-				<div class="service-block  text-center">
-					<div class="service-icon text-center">
-						<i class="fas fa-diagnoses"></i>
-					</div>
-					<h3>Other services</h3>
-					<p>We provide some other value added services to our clients</p>
-				</div>
-			</div>
-			<!-- End Single Service Item -->
-			
-			<!-- Single Service Item -->
-<!-- 			<div class="col-md-4 col-sm-6 col-xs-12  no-padding"  >
-				<div class="service-block color-bg text-center">
-					<div class="service-icon text-center">
-						<i class="tf-ion-ios-crop"></i>
-					</div>
-					<h3>Apps Development</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.</p>
-				</div>
-			</div> -->
-			<!-- End Single Service Item -->
-			
-			<!-- Single Service Item -->
-<!-- 			<div class="col-md-4 col-sm-6 col-xs-12  no-padding">
-				<div class="service-block text-center">
-					<div class="service-icon text-center">
-						<i class="tf-ion-ios-home-outline"></i>
-					</div>
-					<h3>Networking</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur.. Sed id lorem eget orci dictum facilisis vel id tellus. Nullam iaculis arcu at mauris dapibus consectetur.</p>
-				</div>
-			</div> -->
-			<!-- End Single Service Item -->
 				
 		</div> 		<!-- End row -->
 	</div>   	<!-- End container -->
