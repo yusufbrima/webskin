@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Service;
-use App\Doctor;
 
 class ServicesController extends Controller
 {
@@ -15,34 +15,12 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $resultset['services'] = Service::orderBy('created_at','desc')->get();
-        $resultset['doctors'] = Doctor::orderBy('created_at','desc')->take(8)->get();
-        return view('pages.index')->with('resultset',$resultset);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function displayservices()
-    {
         $services =  Service::all();
-        return view('pages.services')->with('services',$services);
+        return view('pages.services')->with([
+            "services" => $services
+         ]);
     }
 
-
-       /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function displaydoctors()
-    {
-        $doctors =  Doctor::all();
-        return view('pages.about')->with('doctors',$doctors);
-    }
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -50,7 +28,7 @@ class ServicesController extends Controller
      */
     public function create()
     {
-        //
+        return view('services.create');
     }
 
     /**
@@ -72,7 +50,7 @@ class ServicesController extends Controller
      */
     public function show($id)
     {
-      //
+         return view('services.show');
     }
 
     /**
@@ -83,7 +61,7 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-        //
+         return view('services.edit');
     }
 
     /**
@@ -95,7 +73,7 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         return redirect('/dashboard');
     }
 
     /**
@@ -106,6 +84,6 @@ class ServicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+         return redirect('/dashboard');
     }
 }

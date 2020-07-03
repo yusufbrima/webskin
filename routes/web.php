@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Expert;
+use App\Service;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,38 +18,49 @@ use Illuminate\Support\Facades\Route;
     return view('pages.index');
 });*/
 
-Route::get('/about','ServicesController@displaydoctors');
+Route::get('/about',function(){
+	$doctors = Expert::all();
+	return view('pages.about')->with(
+		["doctors" => $doctors
+	]);
+});
 
 Route::get('/contact', function () {
     return view('pages.contact');
 });
 
-Route::get('/services','ServicesController@displayservices');
+Route::resource('services','ServicesController');
 
-Route::get('/test', function () {
-    return view('pages.test');
-});
+Route::resource('experts','ExpertsController')->middleware('verified');
 
-Route::resource('/doctors','DoctorsController');
+
+Route::resource('/appointments','AppointmentsController')->middleware('verified');
+
+Route::resource('/profile','ProfilesController')->middleware('verified');
+
+Route::get('dashboard','ProfilesController@index')->middleware('verified');
+
+Route::resource('/patients','PatientsController')->middleware('verified');
+
+Route::resource('/qualifications','QualificationsController')->middleware('verified');
 
 #Route::get('/','ServicesController@index');
-Route::resource('/','ServicesController');
-Auth::routes();
+Route::get('/',function(){
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+	$resultset['doctors'] =  Expert::all();
+	$resultset['services'] = Service::all();
+	return view('pages.index')->with('resultset',$resultset);
+});
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/tour', 'Web\DashboardController@tour')->name('tour')->middleware('verified');
 
-Auth::routes();
+Route::get('/blank', 'Web\DashboardController@blank')->name('blank')->middleware('verified');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile/{id}/edit', 'Web\DashboardController@edit')->name('edit')->middleware('verified');

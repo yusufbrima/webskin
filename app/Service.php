@@ -8,7 +8,10 @@ class Service extends Model
 {
     //
 
-    public function user(){
-    	return $this->belongsTo('App\User');
+    protected $fillable = ['title', 'description']; 
+
+
+    public function appointments(){
+    	return hasMany('App\Appointment');
     }
 }
